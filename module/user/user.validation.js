@@ -15,9 +15,16 @@ export const getUserSchema = {
 export const forgetPasswordSchema = {
     body: joi.object().required().keys({
 
-        password: joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
         newPassword: joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
         newCPassword: joi.string().valid(joi.ref("newPassword")).required(),
         OTP: joi.string().required()
+    })
+}
+export const ChangePasswordSchema = {
+    body: joi.object().required().keys({
+
+        currentPassword: joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
+        newPassword: joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
+        newCPassword: joi.string().valid(joi.ref("newPassword")).required(),
     })
 }

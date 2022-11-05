@@ -7,7 +7,7 @@ import * as allRoutes from "./module/index.route.js";
 const app = express();
 
 app.use(express.json());
-const baseUrl = "/api/v1/user";
+const baseUrl = "/api/v1";
 app.use(`${baseUrl}/user`, allRoutes.userRoute)
 app.use(`${baseUrl}/message`, allRoutes.messageRoute)
 app.use(`${baseUrl}/auth`, allRoutes.authRoute)

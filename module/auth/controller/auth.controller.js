@@ -6,6 +6,7 @@ import { sendEmail } from "../../../service/sendEmail.js";
 
 const signUp = async (req, res) => {
     try {
+
         let { userName, email, password, cPassword, age, phone } = req.body;
         if (password == cPassword) {
             const user = await userModel.findOne({ email });
