@@ -46,3 +46,16 @@ export const getUser = async (req, res) => {
 }
 
 export const softDelete = async (req, res) => { }
+
+export const profilePic = async (req, res) => {
+    if (req.imageError) {
+        res.json({ message: "invalid image format" })
+    } else {
+        if (!res.file) {
+            res.json({ message: "please upload image" })
+        } else {
+            await userModel.updateOne({ _id: req.userId }, { profilePic: req.file.path })
+            res.json({ message: "Done" })
+        }
+    }
+}

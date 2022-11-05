@@ -8,6 +8,7 @@ const app = express();
 
 app.use(express.json());
 const baseUrl = "/api/v1";
+app.use(`${baseUrl}/uploads`, express.static('./uploads'))
 app.use(`${baseUrl}/user`, allRoutes.userRoute)
 app.use(`${baseUrl}/message`, allRoutes.messageRoute)
 app.use(`${baseUrl}/auth`, allRoutes.authRoute)
