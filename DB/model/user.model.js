@@ -27,7 +27,12 @@ const userSchema = new mongoose.Schema({
     },
     profilePic: String,
     coverPics: String,
-    OTP: String
+    OTP: String,
+    messages: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "messages",
+    }
+
 
 });
 
