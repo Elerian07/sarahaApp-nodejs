@@ -8,6 +8,10 @@ const app = express();
 
 app.use(express.json());
 const baseUrl = "/api/v1";
+
+app.get("/", (req, res) => {
+    res.send("<h1>Home Page</h1 > <br> <h5>By Mohamed Elerian</h5>")
+})
 app.use(`${baseUrl}/uploads`, express.static('./uploads'))
 app.use(`${baseUrl}/user`, allRoutes.userRoute)
 app.use(`${baseUrl}/message`, allRoutes.messageRoute)
